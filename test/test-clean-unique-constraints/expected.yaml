@@ -1,0 +1,9 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1692093190021-5
+      author: jeremiec (generated)
+      changes:
+        - addUniqueConstraint:
+            columnNames: surname
+            constraintName: UC_SURNAME_COL
+            tableName: user

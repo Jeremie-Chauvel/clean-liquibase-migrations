@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1692093190021-1
+      author: jeremiec (generated)
+      changes:
+        - dropUniqueConstraint:
+            constraintName: UC_NAME_LOWER_CASE_COL
+            tableName: user
+  - changeSet:
+      id: 1692093190021-2
+      author: jeremiec (generated)
+      changes:
+        - addUniqueConstraint:
+            columnNames: name_lower_case
+            constraintName: UC_NAME_LOWER_CASE_COL
+            tableName: user
+  - changeSet:
+      id: 1692093190021-3
+      author: jeremiec (generated)
+      changes:
+        - dropUniqueConstraint:
+            constraintName: UC_LABEL_COL
+            tableName: user
+  - changeSet:
+      id: 1692093190021-4
+      author: jeremiec (generated)
+      changes:
+        - addUniqueConstraint:
+            columnNames: label
+            constraintName: UC_LABEL_COL
+            tableName: user
+  - changeSet:
+      id: 1692093190021-5
+      author: jeremiec (generated)
+      changes:
+        - addUniqueConstraint:
+            columnNames: surname
+            constraintName: UC_SURNAME_COL
+            tableName: user

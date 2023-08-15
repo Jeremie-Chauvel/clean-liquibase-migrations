@@ -1,0 +1,49 @@
+{
+  "name": "@jeremiec/clean-liquibase-migrations",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@8.6.10",
+  "description": "clean liquibase migrations for recreated drop/create unique constraints",
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jeremie-Chauvel/clean-liquibase-migrations.git"
+  },
+  "bugs": "https://github.com/Jeremie-Chauvel/clean-liquibase-migrations/issues",
+  "keywords": [],
+  "sideEffects": false,
+  "bin": "./dist/index.mjs",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "unbuild --stub",
+    "lint": "eslint .",
+    "prepublishOnly": "pnpm run test && pnpm run build",
+    "release": "bumpp && npm publish --access=public",
+    "test": "vitest run",
+    "test:watch": "vitest watch"
+  },
+  "dependencies": {
+    "js-yaml": "4.1.0",
+    "picocolors": "1.0.0"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^0.40.2",
+    "bumpp": "^9.1.1",
+    "eslint": "^8.47.0",
+    "lint-staged": "^13.2.3",
+    "simple-git-hooks": "^2.9.0",
+    "unbuild": "^1.2.1",
+    "vite": "^4.4.7",
+    "vitest": "^0.33.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}

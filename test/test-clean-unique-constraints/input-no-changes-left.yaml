@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1692093190021-1
+      author: jeremiec (generated)
+      changes:
+        - dropUniqueConstraint:
+            constraintName: UC_SURNAME_COL
+            tableName: user
+  - changeSet:
+      id: 1692093190021-2
+      author: jeremiec (generated)
+      changes:
+        - addUniqueConstraint:
+            columnNames: name_lower_case
+            constraintName: UC_SURNAME_COL
+            tableName: user
